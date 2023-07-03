@@ -4,9 +4,14 @@ import 'package:fitness_app/screens/Homepage_Sections/homepage.dart';
 import 'package:fitness_app/screens/login_signup/login.dart';
 import 'package:flutter/material.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +24,9 @@ class SignupPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Column(                
+              Column(
                 children: <Widget>[
                   SizedBox(height: 60.0),
-
                   Text(
                     "Sign up",
                     style: TextStyle(
@@ -51,9 +55,7 @@ class SignupPage extends StatelessWidget {
                         filled: true,
                         prefixIcon: Icon(Icons.person)),
                   ),
-
                   SizedBox(height: 20),
-
                   TextField(
                     decoration: InputDecoration(
                         hintText: "Email",
@@ -64,9 +66,7 @@ class SignupPage extends StatelessWidget {
                         filled: true,
                         prefixIcon: Icon(Icons.email)),
                   ),
-
                   SizedBox(height: 20),
-
                   TextField(
                     decoration: InputDecoration(
                       hintText: "Password",
@@ -79,9 +79,7 @@ class SignupPage extends StatelessWidget {
                     ),
                     obscureText: true,
                   ),
-
                   SizedBox(height: 20),
-                  
                   TextField(
                     decoration: InputDecoration(
                       hintText: "Confirm Password",
@@ -97,29 +95,25 @@ class SignupPage extends StatelessWidget {
                 ],
               ),
               Container(
-                padding: EdgeInsets.only(top: 3, left: 3),
-                
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: StadiumBorder(),
-                    padding: EdgeInsets.symmetric(vertical: 16),
-                    backgroundColor: Colors.purple,
-                  ),
-                  child: Text(
-                    "Sign up",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                )
-              ),
-
+                  padding: EdgeInsets.only(top: 3, left: 3),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      shape: StadiumBorder(),
+                      padding: EdgeInsets.symmetric(vertical: 16),
+                      backgroundColor: Colors.purple,
+                    ),
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  )),
               Center(child: Text("Or")),
-
               Container(
                 height: 45,
                 decoration: BoxDecoration(
@@ -134,7 +128,7 @@ class SignupPage extends StatelessWidget {
                       blurRadius: 1,
                       offset: Offset(0, 1), // changes position of shadow
                     ),
-                  ], 
+                  ],
                 ),
                 child: TextButton(
                   onPressed: () {},
@@ -146,38 +140,39 @@ class SignupPage extends StatelessWidget {
                         width: 30.0,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image:   AssetImage('assets/images/login_signup/google.png'),
+                              image: AssetImage(
+                                  'assets/images/login_signup/google.png'),
                               fit: BoxFit.cover),
-                          shape: BoxShape.circle,                          
+                          shape: BoxShape.circle,
                         ),
                       ),
-                
                       SizedBox(width: 18),
-                
-                      Text("Sign In with Google",
+                      Text(
+                        "Sign In with Google",
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.purple,
                         ),
-                      ),  
+                      ),
                     ],
                   ),
                 ),
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text("Already have an account?"),
                   TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                      );
-                    },
-                    child: Text("Login", style: TextStyle(color: Colors.purple),)
-                  )
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      child: Text(
+                        "Login",
+                        style: TextStyle(color: Colors.purple),
+                      ))
                 ],
               )
             ],

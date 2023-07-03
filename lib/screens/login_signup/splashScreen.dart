@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:fitness_app/screens/login_signup/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +20,7 @@ class _SplashState extends State<Splash> {
   _navigatetohome() async {
     await Future.delayed(const Duration(milliseconds: 2500), () {});
     Navigator.pushReplacement(
-        this.context, MaterialPageRoute(builder: (context) => SignupPage()));
+        context, MaterialPageRoute(builder: (context) => const SignupPage()));
   }
 
   @override
